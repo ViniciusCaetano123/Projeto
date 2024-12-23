@@ -1,6 +1,7 @@
 
 import {cadastrar} from '../controllers/usuario.js'
 export default function(fastify, options, done){
+
     const url =  '/usuario'
     fastify.route({
         method:'POST',
@@ -15,14 +16,7 @@ export default function(fastify, options, done){
                 },
                 required: ['nome', 'email', 'senha'],
                 additionalProperties: false
-            },
-            response:{
-                200:{
-                    type: 'object',
-                    mensagem: { type: 'string' },
-                    data: {}
-                }
-            }
+            }            
         },
         handler: cadastrar
     })
