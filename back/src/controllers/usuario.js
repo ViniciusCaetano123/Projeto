@@ -18,11 +18,9 @@ export async function cadastrar (req,res){
         }
         const hashedPassword = await bcrypt.hash(senha, 16);
 
-        const resultInsert = await usuarioDb.inserir({nome,email,"senha":hashedPassword})
-
-        
-        console.log(resultInsert)
-        return res.status(200).res({mensagem:'Usuário cadastro com sucesso'})
+        const resultInsert = await usuarioDb.inserir({nome,email,"senha":hashedPassword})        
+       
+        return res.status(200).send({mensagem:'Usuário cadastro com sucesso'})
     }catch (error) {
         console.log()
         return res.status(500).send({ mensagem: 'Erro ao cadastrar o usuário.' });
