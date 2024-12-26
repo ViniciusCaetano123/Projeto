@@ -13,15 +13,15 @@ const getPreferredTheme = () => {
 
 const setTheme = theme => {
     const whatIsTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  if (theme === 'auto') {
-    document.documentElement.setAttribute('data-bs-theme', (whatIsTheme))
-    setStoredTheme(theme)
-    exibirIconToggle(whatIsTheme)
-  } else {
-    document.documentElement.setAttribute('data-bs-theme', theme)
-    setStoredTheme(theme)
-    exibirIconToggle(theme)
-  }
+    if (theme === 'auto') {
+        document.documentElement.setAttribute('data-bs-theme', (whatIsTheme))
+        setStoredTheme(theme)
+        exibirIconToggle(whatIsTheme)
+    } else {
+        document.documentElement.setAttribute('data-bs-theme', theme)
+        setStoredTheme(theme)
+        exibirIconToggle(theme)
+    }
 }
 
 
@@ -40,5 +40,5 @@ const exibirIconToggle = (theme)=>{
         }
     })
 }
-console.log(getPreferredTheme())
+
 exibirIconToggle(getPreferredTheme())
