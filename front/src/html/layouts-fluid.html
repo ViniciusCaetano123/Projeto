@@ -11,7 +11,8 @@
     <script src="../../bibliotecas/jquery-3.7.1/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="../../bibliotecas/bootstrap-5.3.3/css/bootstrap.min.css">
     <script src="../../bibliotecas/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/theme-toggler.js"></script>
+    <script src="../js/theme-toggler.js"></script>]
+    <script src="../js/notification.js"></script>
     <style>      
       *{
         padding: 0;
@@ -38,14 +39,42 @@
         cursor: pointer;
       }
       .theme-toggle-icon:hover svg{
-        color: #fff;
-       
+        color: #fff;       
       }
       .theme-toggle-icon:hover{
         background-color:  rgba(var(--p-bg-theme-toggle-icon),1);
       }
-      :root{        
+      .dropdown-notification{
         
+        width: 400px;
+      }
+      .dropdown-notification .dropdown-notification-itens{
+        height: auto;
+        overflow-y: auto;
+        max-height: 350px;
+      }
+      /* width */
+      .dropdown-notification .dropdown-notification-itens::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      .dropdown-notification .dropdown-notification-itens::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px grey; 
+        border-radius: 5px;
+      }
+      
+      /* Handle */
+      .dropdown-notification .dropdown-notification-itens::-webkit-scrollbar-thumb {
+        background: rgb(168, 168, 168); 
+        border-radius: 5px;
+      }
+
+      /* Handle on hover */
+      .dropdown-notification .dropdown-notification-itens::-webkit-scrollbar-thumb:hover {
+        background: #535353; 
+      }
+      :root{    
         --panda-warning-light: 214,99,10;     
         --p-bg-theme-toggle-icon: var(--panda-warning-light)
       }
@@ -197,20 +226,12 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bell-fill dropdown-toggle" viewBox="0 0 16 16"  type="button" data-bs-auto-close="false" data-bs-toggle="dropdown" aria-expanded="false">
                   <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"/>
                 </svg>
-                <ul class="dropdown-menu dropdown-menu-end" style="width: 300px">
+                <ul class="dropdown-menu dropdown-menu-end dropdown-notification" >
                   <li class="dropdown-item text-secondary-emphasis fw-semibold">Notificações</li>
                   <li><hr class="dropdown-divider"></li>
-                  <li class="dropdown-item">
-                    <div>
-                      <p class="fs-7">Jane Foster</p>
-                      <p class="fs-7">Mentioned you in a comment.</p>
-                      <date class="fs-7 font-bold d-flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
-                          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5"/>
-                        </svg>
-                        10:41 AM August 7,2021</date>
-                    </div>
-                  </li>
+                  <div class="dropdown-notification-itens">
+
+                  </div>
                   <li><hr class="dropdown-divider"></li>
                   <li class="text-center"><a href="#" class="fs-8 text-decoration-none fw-semibold">Notification history</a></li>
                 </ul>
